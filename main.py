@@ -1,5 +1,5 @@
 from flask import Flask, jsonify
-from Flask_SQLAlchemy import SQLAlchemy 
+from flask_sqlalchemy import SQLAlchemy
 import os
 
 
