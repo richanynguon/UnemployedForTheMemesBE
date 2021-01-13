@@ -8,15 +8,11 @@ DATABASE_URL = os.getenv('DATABASE_URL')
 app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URL
 db = SQLAlchemy(app)
 
-@app.route('/', methods=['GET'])
-def index():
-    msg = "running"
-    print('I am running index')
-    return jsonify(msg)
+class HelloWorld(Resource):
+    def get(self):
+        return {'hello': 'world'}
 
-@app.route('/favicon.ico', methods=['GET'])
-def favicon():
-    return
+api.add_resource(HelloWorld, '/')
 
 if __name__ == '__main__':
     app.run(debug=True)
