@@ -14,7 +14,7 @@ def index():
     print('I am running index')
     return jsonify(msg)
 
-@app.route('/favicon.ico')
+@app.route('/favicon.ico', methods=['GET'])
 def favicon():
     return
 
