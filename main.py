@@ -8,7 +8,7 @@ DATABASE_URL = os.getenv('DATABASE_URL')
 app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URL
 db = SQLAlchemy(app)
 
-@app.route('/')
+@app.route('/', methods=['GET'])
 def index():
     msg = "running"
     return jsonify(msg)
