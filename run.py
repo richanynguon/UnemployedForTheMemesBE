@@ -2,7 +2,6 @@ from flask import Flask, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
 import os
 
-
 app = Flask(__name__)
 DATABASE_URL = os.getenv('DATABASE_URL')
 app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URL
