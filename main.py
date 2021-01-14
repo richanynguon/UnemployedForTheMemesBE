@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
 import os
 
@@ -16,8 +16,9 @@ def index():
 
 @app.route('/favicon.ico')
 def favicon():
+    print("I am running favicon")
     return send_from_directory(os.path.join(app.root_path, 'static'),
-                               'favicon.ico', mimetype='image/vnd.microsoft.icon')
+                               'favicon.ico')
 
 if __name__ == '__main__':
     app.run(debug=True)
