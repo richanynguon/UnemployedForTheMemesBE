@@ -11,11 +11,11 @@ db = SQLAlchemy(app)
 @app.route('/', methods=['GET'])
 def index():
     msg = "running"
-    return jsonify(msg)
+    return render_template("index.html", title="Home")
 
 @app.route('/favicon.ico', methods=['GET'])
-def favicon():
-    return send_from_directory(app.root_path,'favicon.ico',mimetype='image/vnd.microsoft.icon')
+def favicon(): 
+    return send_from_directory(os.path.join(app.root_path, 'static'), 'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 if __name__ == '__main__':
     app.run(debug=True)
