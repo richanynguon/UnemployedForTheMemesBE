@@ -9,7 +9,7 @@ db = SQLAlchemy(app)
 
 @app.route('/', methods=['GET'])
 def index():
-    return render_template("index.html", message="Hi")
+    return render_template("index.html", message="Hi!")
 
 if __name__ == '__main__':
     app.run(debug=True)
